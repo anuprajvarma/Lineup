@@ -20,6 +20,8 @@ module.exports.saveToDo = async (req, res) => {
 };
 
 module.exports.deleteToDo = async (req, res) => {
+  console.log("delete .....");
+  console.log(`${req.params._id}`);
   const { _id } = req.params;
   TodoModel.findByIdAndDelete(_id)
     .then((data) => {
